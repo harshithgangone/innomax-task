@@ -48,7 +48,7 @@ const ContactForm = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/submit-application", data, {
+      const response = await axios.post("https://innomax-task.onrender.com/submit-application", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

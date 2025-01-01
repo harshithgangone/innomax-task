@@ -59,7 +59,7 @@ const RegisterForm = () => {
   
     try {
       
-      const response = await axios.post("http://localhost:5000/submit-registration", formData, {
+      const response = await axios.post("https://innomax-task.onrender.com/submit-registration", formData, {
         headers: {
           "Content-Type": "application/json",
         },
