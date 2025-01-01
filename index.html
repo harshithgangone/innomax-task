@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JNV Regional Alumni Event</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet@400,500,700&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Agu+Display:MORF@43&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Geist+Mono:wght@100..900&family=Inconsolata:wght@200..900&family=Manrope:wght@200..800&family=Mogra&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Agu+Display:MORF@43&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Geist+Mono:wght@100..900&family=Inconsolata:wght@200..900&family=Manrope:wght@200..800&family=Mogra&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      nav .logo h4{
+        font-family: "Montserrat", serif;
+        color: #14132b;
+        font-weight: 600;
+        font-size: 34px;
+        
+      }
+      body {
+        /* font-family: Arial, sans-serif; */
+        margin: 0;
+        padding: 0;
+        background: #1d1d1e;
+        color: white;
+      }
+      .nav-options{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #f4c714;
+        padding: 1rem;
+        animation: navBarSlideDown 2s ease-in-out;
+        max-height: 80px;
+      }
+      nav .nav-options a {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+      }
+
+      nav .nav-options a::before,
+      nav .nav-options a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+      }
+      nav .nav-options a::before {
+        background-color: #14132b;
+        height: 2px;
+        bottom: 0;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      nav .nav-options a::after {
+        content: attr(data-replace);
+        height: 100%;
+        font-family: "Barlow", serif;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        top: 0;
+        transform-origin: 100% 50%;
+        transform: translate3d(200%, 0, 0);
+        transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+        color: #14132b;
+      }
+
+      nav .nav-options a:hover::before {
+        transform-origin: 0% 50%;
+        transform: scaleX(1);
+      }
+      nav .nav-options a:hover::after {
+        transform: translate3d(0, 0, 0);
+      }
+
+      nav .nav-options a span {
+        display: inline-block;
+        transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+
+      nav .nav-options a:hover span {
+        transform: translate3d(-200%, 0, 0);
+      }
+
+      
+
+     nav .nav-options a span {
+        font-family: "Barlow", serif;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: #18272f;
+        font-weight: 700;
+        vertical-align: top;
+        font-size: 17px;
+      }
+
+      .hero-section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-images {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("image1.jpeg") no-repeat center center;
+        background-size: cover;
+        animation: zoomOutFadeIn 1.3s ease-out forwards;
+      }
+      @keyframes zoomOutFadeIn {
+        0% {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: 0.4;
+          transform: scale(1);
+        }
+      }
+      @keyframes navBarSlideDown {
+        0% {
+          transform: scale(0.5);
+          transform: translateY(-70px);
+        }
+        50% {
+          transform: scale(1.5);
+          transform: translateY(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .hero-content {
+        font-family: 'Satoshi', sans-serif;
+        /* font-weight: 400; */
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInText 1.3s ease-out forwards;
+      }
+      .hero-content h1 {
+        font-family: 'Satoshi', sans-serif;
+        font-size: 75px;
+        font-weight: 900;
+        /* background: #00000041; */
+        padding: 25px;
+        border-radius: 20px 20px 0px 0px;
+        margin: 0;
+        
+      }
+      .hero-content p{
+        /* background: #00000041; */
+        padding: 5px;
+        margin: 0;
+        font-size: 25px;
+        border-radius: 0px 0px 20px 20px;
+        
+      }
+      .hero-content .cta-buttons {
+        margin-top: 30px;
+      }
+      .cta-buttons .btn {
+        margin: 0 1rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        border: 3px solid #ffff;
+        background: transparent;
+        color: white;
+        font-weight: bold;
+      }
+      @keyframes fadeInText {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .event-details,
+      .faqs,
+      .contact-form {
+        padding: 3rem 1rem;
+      }
+      .event-details {
+        background: #f05454;
+      }
+      .faqs {
+        background: #111f4d;
+      }
+      .contact-form {
+        background: #1d1d1e;
+      }
+      footer {
+        background: #121435;
+        text-align: center;
+        padding: 1rem 0;
+      }
+      .card {
+        background: #2d2d2e;
+        color: white;
+        border: none;
+        margin-bottom: 1rem;
+      }
+      .card h5 {
+        color: #f4c714;
+      }
+      .button {
+        pointer-events: auto;
+        cursor: pointer;
+        background: #e7e7e7;
+        border: none;
+        padding: 11px 15px;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+      }
+
+      .button::before,
+      .button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .button--pan {
+        font-family: "Barlow", serif;
+        font-weight: 500;
+        letter-spacing: 2px;
+        border: 2px solid #000;
+        border-radius: 3rem;
+        overflow: hidden;
+        color: #fff;
+      }
+
+      .button--pan span {
+        position: relative;
+        mix-blend-mode: difference;
+      }
+
+      .button--pan::before {
+        content: "";
+        background: #000;
+        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+      }
+      .cta-buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin-top: 90px;
+        place-content: center;
+      }
+
+      .button--pan:hover::before {
+        transform: translate3d(0, -100%, 0);
+      }
+      .button--anthe {
+        background-color: #ffff;
+	font-family: "Satoshi", sans-serif;
+	color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 20px;
+	background: none;
+}
+
+.button--anthe::before {
+	content: '';
+	background: #00000080;
+    border: 3px solid #ffff;
+    padding: 20px;border-radius: 20px;
+	-webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+	transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1), -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.button--anthe:hover::before {
+    border: none;
+	background: #000;
+	-webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.button--anthe span {
+	display: block;
+	mix-blend-mode: difference;
+	transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.button--anthe:hover span {
+	transform: translate3d(-10px,0,0);
+    
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h4>JNV Alumni</h4>
+      </div>
+      <div class="nav-options">
+        <a href="#" id="style-2" data-replace="HOME"><span>HOME</span></a>
+        <a href="#" id="style-2" data-replace="EVENT DETAILS"
+          ><span>EVENT DETAILS</span></a
+        >
+        <a href="#" id="style-2" data-replace="FAQs"><span>FAQs</span></a>
+        <a href="#" id="style-2" data-replace="CONTACT"
+          ><span>CONTACT</span></a
+        >
+        <a href="#" id="style-2" data-replace="BLOG"><span>BLOG</span></a>
+      </div>
+      <div class="nav-buttons">
+        <button class="button button--pan"><span>REGISTER</span></button>
+      </div>
+    </nav>
+
+    <div id="piling-container">
+      <!-- Hero Section -->
+      <div class="piling-item hero-section" id="hero">
+        <div class="hero-images"></div>
+        <!-- Background image container -->
+        <div class="hero-content">
+          <h1>Welcome to JNV Alumni Event</h1>
+          <p>Join us for an unforgettable experience in Hyderabad!</p>
+          <div class="cta-buttons">
+            <button class="button button--anthe"><span>Register</span></button>
+            <button class="button button--anthe"><span>Submit Application</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Details Section -->
+      <div class="piling-item event-details" id="details">
+        <div class="container text-center">
+          <h2>Event Details</h2>
+          <p>Date: January 20, 2024</p>
+          <p>Location: Hyderabad</p>
+          <p>Highlights: Keynote speakers, startup awards, and more!</p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Keynote Speakers</h5>
+                  <p class="card-text">
+                    Engage with distinguished speakers from various industries.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Startup Showcase</h5>
+                  <p class="card-text">
+                    Explore innovative ideas and startups by JNV alumni.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Networking Opportunities</h5>
+                  <p class="card-text">
+                    Reconnect and network with fellow alumni.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs Section -->
+      <div class="piling-item faqs" id="faqs">
+        <div class="container">
+          <h2 class="text-center">FAQs</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Who can attend the event?</h5>
+                  <p class="card-text">
+                    All alumni of JNV are welcome to join the event.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    How can I submit my startup application?
+                  </h5>
+                  <p class="card-text">
+                    Click on the "Submit Application" button and fill out the
+                    form.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="piling-item contact-form" id="contact">
+        <div class="container">
+          <h2 class="text-center">Contact Us</h2>
+          <form action="#" method="POST" class="w-50 mx-auto">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 JNV Alumni Event. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
